@@ -410,4 +410,40 @@
   <block type="text" id="DQ5CR%iZ`D=%rjTXjw;n" disabled="true" x="0" y="888">
     <field name="TEXT">STILL</field>
   </block>
-</xml>
+</xml><strategy>
+  <trade_type>digits</trade_type>
+  <trade_option>over-under</trade_option>
+  <prediction>5</prediction>
+  <conditions>
+    <condition>
+      <name>volatility_100_index</name>
+      <operator>higher</operator>
+      <value>5</value>
+      <actions>
+        <action>
+          <name>win_payout</name>
+          <value>8 * initial_amount</value>
+        </action>
+        <action>
+          <name>loss_payout</name>
+          <value>0.5 * initial_amount</value>
+        </action>
+      </actions>
+    </condition>
+    <condition>
+      <name>volatility_100_index</name>
+      <operator>lower</operator>
+      <value>5</value>
+      <actions>
+        <action>
+          <name>win_payout</name>
+          <value>4 * initial_amount</value>
+        </action>
+        <action>
+          <name>loss_payout</name>
+          <value>0.5 * initial_amount</value>
+        </action>
+      </actions>
+    </condition>
+  </conditions>
+</strategy>
